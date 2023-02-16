@@ -1,9 +1,50 @@
 @import "normalize";
 @import "variables";
 @import "components/header";
+@import "components/footer";
 
 body {
   font-family: "Ubuntu", sans-serif;
   line-height: 1.5;
   color: $gray-dark;
 }
+
+
+.p1 {
+  font-size: 12px;
+}
+
+.p2 {
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main {
+  flex: 1;
+}
+
