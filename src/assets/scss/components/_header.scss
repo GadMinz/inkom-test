@@ -1,11 +1,9 @@
 @import "../variables";
 
 .header {
-  height: 76px;
   border-bottom: 1px solid $gray-dark;
-
   &_content {
-    height: 100%;
+    height: 76px;;
     max-width: $wrapper;
     margin: 0 auto;
     display: flex;

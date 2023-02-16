@@ -1,4 +1,4 @@
-# inkom-test
+# https://inkom-test.vercel.app/
 
 ## Project setup
 ```
