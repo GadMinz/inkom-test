@@ -48,3 +48,9 @@ h3 {
 main {
   flex: 1;
 }
+
+.icon {
+  &.active {
+    fill: $gray-dark;
+  }
+}

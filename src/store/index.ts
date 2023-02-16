@@ -1,14 +1,17 @@
-import { createStore } from 'vuex'
+import { createLogger, createStore } from "vuex";
+import products from "@/store/modules/products";
+import favorites, { IFavoriteProductsState } from "@/store/modules/favorites";
+import { IProductsState } from "@/store/modules/products";
 
-export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+export interface IRootState {
+  products: IProductsState;
+  favorites: IFavoriteProductsState;
+}
+
+export const store = createStore({
   modules: {
-  }
-})
+    products,
+    favorites,
+  },
+  plugins: [createLogger()],
+});

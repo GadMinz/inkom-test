@@ -12,3 +12,8 @@ export interface IProduct {
   image: string;
   rating: IRating;
 }
+
+export type TFavoriteProduct = Omit<
+  IProduct,
+  "description" | "category" | "rating"
+>;

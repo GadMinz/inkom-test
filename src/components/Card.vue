@@ -1,17 +1,33 @@
 <script setup lang="ts">
 import noPhoto from "@/assets/img/no-photo.svg";
+import { store } from "@/store";
+import { computed } from "vue";
+
 const props = defineProps({
   id: { type: Number, required: true },
   image: { type: String, default: noPhoto },
   title: { type: String, required: true },
   price: { type: Number, required: true },
 });
-const isExistInFavorites = false;
+const favorites = computed(() => store.state.favorites.all);
+const isExistInFavorites = computed(() =>
+  favorites.value.some((p) => p.id === props.id)
+);
+
+const addFavorite = () => {
+  const { id, image, title, price } = props;
+  store.dispatch("favorites/toggleFavoriteProduct", {
+    id,
+    image,
+    title,
+    price,
+  });
+};
 </script>
 
 <template>
   <div class="card">
-    <span class="card_favorite">
+    <span class="card_favorite" @click.stop.prevent="addFavorite">
       <svg
         class="icon"
         :class="{ active: isExistInFavorites }"
