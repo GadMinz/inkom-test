@@ -4,6 +4,7 @@
 @import "components/footer";
 @import "components/catalog";
 @import "components/card";
+@import "components/product";
 
 body {
   font-family: "Ubuntu", sans-serif;
@@ -52,5 +53,66 @@ main {
 .icon {
   &.active {
     fill: $gray-dark;
+  }
+}
+
+.btn {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 2;
+  text-transform: uppercase;
+  color: $gray-dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid $gray-dark;
+  border-radius: 4px;
+  user-select: none;
+
+  &:hover {
+    svg {
+      fill: $gray-dark;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.navigation {
+  margin: 32px auto;
+  max-width: $wrapper;
+  display: flex;
+  gap: 14px;
+
+  li {
+    position: relative;
+    text-decoration: underline;
+    font-size: 12px;
+    color: $gray;
+
+    &::after {
+      content: "›";
+      position: absolute;
+      top: 0;
+      right: -8px;
+    }
+
+    &:last-child {
+      pointer-events: none;
+      text-decoration: none;
+
+      &::after {
+        content: "";
+      }
+    }
   }
 }

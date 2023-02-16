@@ -1,0 +1,48 @@
+@import "../variables";
+
+.product {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 112px;
+  &_image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $gray-light;
+    max-height: 715px;
+    padding: 15px;
+    aspect-ratio: 680/715;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+    }
+  }
+  &_info {
+    flex: 1;
+    &_title {
+      margin-bottom: 24px;
+    }
+    &_price {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 1.25;
+      margin: 24px 0;
+    }
+  }
+  .btn {
+    width: 200px;
+  }
+  &_wrapper {
+    margin: 0 auto;
+    max-width: $wrapper;
+  }
+  @media screen and (max-width: 660px) {
+    flex-direction: column;
+    padding: 0 20px;
+    &_image {
+      max-height: 400px;
+    }
+  }
+}
