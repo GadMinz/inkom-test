@@ -1,0 +1,48 @@
+@import "../variables";
+
+.header {
+  height: 76px;
+  border-bottom: 1px solid $gray-dark;
+
+  &_content {
+    height: 100%;
+    max-width: $wrapper;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &_logo {
+    padding-bottom: 10px;
+  }
+  &_tools {
+    padding-right: 10px;
+    &_item {
+      position: relative;
+      cursor: pointer;
+      transition: all 200ms ease;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    & .count {
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background-color: #eb4c47;
+      font-weight: 700;
+      font-size: 8px;
+      color: $white;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: -6px;
+      right: -40%;
+      user-select: none;
+      &.active {
+        display: flex;
+      }
+    }
+  }
+}
