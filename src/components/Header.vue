@@ -1,4 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { computed } from "vue";
+import { store } from "@/store";
+
+const favorites = computed(() => store.state.favorites.all.length);
+</script>
 
 <template>
   <header class="header">
@@ -24,7 +29,7 @@
               stroke-linejoin="round"
             />
           </svg>
-          <span class="count active">5</span>
+          <span v-if="favorites > 0" class="count active">{{ favorites }}</span>
         </RouterLink>
       </div>
     </div>

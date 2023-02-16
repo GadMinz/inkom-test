@@ -1,12 +1,18 @@
 import { TFavoriteProduct } from "@/types";
 import { IRootState } from "@/store";
 import { ActionContext } from "vuex";
+import { updateLocalStorage } from "@/store/localStorage";
 
 export interface IFavoriteProductsState {
   all: TFavoriteProduct[];
 }
+
+const favoritesItems: TFavoriteProduct[] = JSON.parse(
+  localStorage.getItem("favorites") || "[]"
+);
+
 const initialState: IFavoriteProductsState = {
-  all: [],
+  all: favoritesItems,
 };
 
 // initial state
@@ -34,9 +40,11 @@ const actions = {
 const mutations = {
   addFavorite(state: IFavoriteProductsState, payload: TFavoriteProduct) {
     state.all.push(payload);
+    updateLocalStorage("favorites", state.all);
   },
   removeFavorite(state: IFavoriteProductsState, payload: TFavoriteProduct) {
     state.all = state.all.filter((p) => p.id !== payload.id);
+    updateLocalStorage("favorites", state.all);
   },
 };
 export default {

@@ -1,0 +1,50 @@
+@import "../variables";
+
+.favorites {
+  max-width: $wrapper;
+  margin: 0 auto;
+
+  &_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: $wrapper;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+    margin-bottom: 112px;
+  }
+
+  &_notfound {
+    text-align: center;
+    height: 100%;
+    margin-top: 32px;
+  }
+
+  & .card {
+    svg {
+      display: none;
+    }
+
+    &_favorite {
+      &:after,
+      &:before {
+        position: absolute;
+        content: " ";
+        height: 20px;
+        width: 2px;
+        background-color: #000000;
+        right: 10px;
+        border-radius: 2px;
+      }
+
+      &:after {
+        transform: rotate(45deg);
+      }
+
+      &:before {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
