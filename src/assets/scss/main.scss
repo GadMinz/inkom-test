@@ -2,13 +2,14 @@
 @import "variables";
 @import "components/header";
 @import "components/footer";
+@import "components/catalog";
+@import "components/card";
 
 body {
   font-family: "Ubuntu", sans-serif;
   line-height: 1.5;
   color: $gray-dark;
 }
-
 
 .p1 {
   font-size: 12px;
@@ -47,4 +48,3 @@ h3 {
 main {
   flex: 1;
 }
-

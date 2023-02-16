@@ -1,0 +1,14 @@
+@import "../variables";
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: $wrapper;
+  margin: 112px auto;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 709px) {
+    margin: 40px auto;
+  }
+}
